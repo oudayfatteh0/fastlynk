@@ -27,7 +27,83 @@
   - MongoDB with Mongoose
   - bcrypt for password hashing
   - nanoid for generating unique IDs
+ 
+## API Endpoints
+### 1. Generate a Short URL
+**Endpoint:** `POST /shorten`
 
+**Description:** Creates a short URL for the given long URL. Optionally, users can set a password for access control and enable one-time usage.
+
+**Request Body:**
+```json
+{
+  "longUrl": "https://example.com",
+  "password": "optional-password",
+  "isOneTime": true
+}
+```
+
+**Response:**
+```json
+{
+  "shortId": "abc123",
+  "isProtected": true,
+  "isOneTime": true
+}
+```
+
+**Error Responses:**
+- `400 Bad Request` if the `longUrl` is missing or invalid.
+
+---
+
+### 2. Check If a URL is Password Protected or Handle Redirect
+**Endpoint:** `GET /:shortId`
+
+**Description:** Retrieves the long URL associated with the short ID. If the URL is password-protected, it will return a flag indicating protection. If the URL is one-time use and already accessed, it returns an error.
+
+**Response:**
+- If the URL is protected:
+```json
+{
+  "isProtected": true,
+  "isOneTime": false
+}
+```
+- If the URL is not protected:
+```json
+"https://example.com"
+```
+
+**Error Responses:**
+- `404 Not Found` if the short ID does not exist.
+- `410 Gone` if the URL was one-time use and already accessed.
+
+---
+
+### 3. Verify Password and Get URL
+**Endpoint:** `POST /:shortId/access`
+
+**Description:** If a URL is password-protected, this endpoint verifies the password and returns the original long URL. If the URL is not password-protected, it behaves like the previous endpoint.
+
+**Request Body:**
+```json
+{
+  "password": "your-password"
+}
+```
+
+**Response:**
+```json
+"https://example.com"
+```
+
+**Error Responses:**
+- `404 Not Found` if the short ID does not exist.
+- `401 Unauthorized` if the password is incorrect.
+- `410 Gone` if the URL was one-time use and already accessed.
+
+---
 ## 🚀 Getting Started
 
 ### Prerequisites
