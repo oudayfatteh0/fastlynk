@@ -3,7 +3,7 @@
 🚀 FastLynk is a lightning-fast URL shortener that makes sharing links quick, smart, and effortless. Built with React, Node.js, and MongoDB.
 
 ## DEMO
-[FastLynk](https://fastlynk.vercel.app/)
+[FastLynk - Shorten your links and generate QR codes instantly](https://fastlynk.vercel.app/)
 
 ## ✨ Features
 
