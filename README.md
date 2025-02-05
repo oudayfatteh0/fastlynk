@@ -2,6 +2,9 @@
 
 🚀 FastLynk is a lightning-fast URL shortener that makes sharing links quick, smart, and effortless. Built with React, Node.js, and MongoDB.
 
+## DEMO
+[FastLynk](https://pages.github.com/](https://fastlynk.vercel.app/)
+
 ## ✨ Features
 
 - **Quick URL Shortening**: Convert long URLs into short, manageable links instantly
