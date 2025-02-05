@@ -1,6 +1,6 @@
-const express = require("express");
-const { nanoid } = require("nanoid");
-const Url = require("../models/Url");
+import express from 'express';
+import { nanoid } from 'nanoid'
+import Url from "../models/Url.js";
 
 const router = express.Router();
 
@@ -25,4 +25,4 @@ router.get("/:shortId", async (req, res) => {
   res.redirect(url.longUrl);
 });
 
-module.exports = router;
+export default router;

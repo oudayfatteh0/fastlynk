@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const urlSchema = new mongoose.Schema({
   longUrl: { type: String, required: true },
@@ -6,4 +6,4 @@ const urlSchema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now }
 });
 
-module.exports = mongoose.model("Url", urlSchema);
+export default mongoose.model("Url", urlSchema);
