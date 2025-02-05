@@ -37,7 +37,7 @@ const App: React.FC = () => {
       const redirect = async () => {
         setIsRedirecting(true);
         try {
-          const response = await axios.get(`http://localhost:5000/${shortId}`);
+          const response = await axios.get(`https://fastlynk-server.vercel.app/${shortId}`);
           
           if (response.status === 410) {
             setIsRedirecting(false);
@@ -74,7 +74,7 @@ const App: React.FC = () => {
 
   const handleAccess = async (shortId: string) => {
     try {
-      const response = await axios.post(`http://localhost:5000/${shortId}/access`, {
+      const response = await axios.post(`https://fastlynk-server.vercel.app/${shortId}/access`, {
         password: accessPassword
       });
       if (response.status === 410) {

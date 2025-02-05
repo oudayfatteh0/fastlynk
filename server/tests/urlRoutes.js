@@ -1,5 +1,5 @@
 import request from "supertest";
-import app from "../server.js";
+import app from "../index.js";
 import mongoose from "mongoose";
 import Url from "../models/Url.js";
 
