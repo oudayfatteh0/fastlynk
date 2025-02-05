@@ -29,34 +29,32 @@
 
 ### Prerequisites
 
-- Node.js (v14 or higher)
+- Node.js
 - MongoDB
 - npm or yarn
 
 ### Installation
 
 1. Clone the repository:
-bash
-git clone https://github.com/oudayfatteh/fastlynk.git
-cd fastlynk
+- `git clone https://github.com/oudayfatteh/fastlynk.git`
+- `cd fastlynk`
 2. Install dependencies:
-bash
 Install backend dependencies
-cd server
-npm install
+- `cd server`
+- `npm install`
 Install frontend dependencies
-cd ../client
-npm install
+- `cd ../client`
+- `npm install`
 3. Create a `.env` file in the server directory:
-env
+```
 MONGODB_URI=your_mongodb_connection_string
 PORT=5000
+```
 4. Start the development servers:
-bash
 Start backend server (from server directory)
-npm start
+- `npm start`
 Start frontend server (from client directory)
-npm run dev
+- `npm run dev`
 ## 💻 Usage
 
 1. Open your browser and navigate to `http://localhost:5173`
